@@ -33,7 +33,6 @@ static std::fstream open_file_s(uint32_t mode)
 	f.nFilterIndex = 1;
 	f.Flags        = OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST;
 	GetOpenFileNameA(&f) ? LOG_INFO("file \"{}\" found", dir_buf) : void();
-	ZeroMemory(&f, sizeof(f));
 	file.open(dir_buf, mode);
 #endif
 	return file;
@@ -53,7 +52,6 @@ static const char* open_file()
 	f.nFilterIndex = 1;
 	f.Flags        = OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST;
 	GetOpenFileNameA(&f) ? LOG_INFO("file \"{}\" found", dir_buf) : void();
-	ZeroMemory(&f, sizeof(f));
 #endif
 	return dir_buf;
 }
