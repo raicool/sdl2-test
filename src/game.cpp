@@ -1,7 +1,6 @@
 #include "pch.h"
 #include "game.h"
 
-#include "audio/audio.h"
 #include "common/log.h"
 #include "core/window.h"
 #include "system/entity.h"
@@ -11,12 +10,10 @@
 
 window sdlwindow;
 scene game_scene;
-audio game_audio;
 
 void init()
 {
 	log::init();
-	init_audio(&game_audio);
 
 	sdlwindow.init("SDL", 1326, 720);
 	sdlwindow.add_panel<hierarchy>(&game_scene);
@@ -35,7 +32,6 @@ void init()
 	game_scene.scene_texture_pallete[0] = texture::get_texture("colorful");
 	game_scene.scene_texture_pallete[1] = texture::get_texture("grid");
 	
-	//game_scene.add_ball(1326 / 2, 720 / 2);
 	game_scene.add_player("player1", 1326 / 2, 720 / 1.25, "red", true);
 	game_scene.add_player("player2", 1326 / 2, 720 / 4, "blue");
 
