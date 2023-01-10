@@ -5,8 +5,8 @@
 
 void rect::set_position(uint32_t posx, uint32_t posy)
 {
-	rect.x = posx;
-	rect.y = posx;
+	x = posx;
+	y = posx;
 }
 
 void rect::set_texture(const char* tex)

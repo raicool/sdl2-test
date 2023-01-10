@@ -16,8 +16,8 @@ uint32_t scene::add_player(const char* identifier, uint32_t posx, uint32_t posy,
 	new_player->model.set_texture(texture);
 
 	vector2<float> tex_size = texture_size<float>(texture);
-	new_player->model.rect.w = tex_size.x;
-	new_player->model.rect.h = tex_size.y;
+	new_player->model.w = tex_size.x;
+	new_player->model.h = tex_size.y;
 
 	entities.push_back(new_player);
 
@@ -33,8 +33,8 @@ uint32_t scene::add_ball(uint32_t posx, uint32_t posy)
 	new_ball->model.set_texture("ball");
 
 	vector2<float> tex_size = texture_size<float>("ball");
-	new_ball->model.rect.w = tex_size.x;
-	new_ball->model.rect.h = tex_size.y;
+	new_ball->model.w = tex_size.x;
+	new_ball->model.h = tex_size.y;
 
 	entities.push_back(new_ball);
 
@@ -94,7 +94,7 @@ void scene::update(window& sdlwindow)
 		// entity
 		if (display_entities)
 		{
-			if (SDL_RenderCopyExF(sdlwindow.sdlrenderer, ent->model.texture, NULL, &ent->model.rect, ent->model.angle, NULL, SDL_FLIP_NONE) == -1)
+			if (SDL_RenderCopyExF(sdlwindow.sdlrenderer, ent->model.texture, NULL, ent->model, ent->model.angle, NULL, SDL_FLIP_NONE) == -1)
 				LOG_ERROR("Problem rendering quad : {}", SDL_GetError());
 		}
 	}

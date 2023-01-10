@@ -14,7 +14,7 @@ void hierarchy::render()
 
 	if (ImGui::TreeNode("field"))
 	{
-		for (auto& tile : current_scene->field->tile_map)
+		for (auto&& tile : current_scene->field->tile_map)
 		{
 			render_tile_node(&tile);
 			ImGui::Spacing();
@@ -62,10 +62,10 @@ void hierarchy::render_entity_node(uint32_t id, entity_base* entity)
 
 	if (ImGui::TreeNode(entity, name))
 	{
-		ImGui::InputFloat("x position", &entity->model.rect.x);
-		ImGui::InputFloat("y position", &entity->model.rect.y);
-		ImGui::InputFloat("width",      &entity->model.rect.w);
-		ImGui::InputFloat("height",     &entity->model.rect.h);
+		ImGui::InputFloat("x position", &entity->model.x);
+		ImGui::InputFloat("y position", &entity->model.y);
+		ImGui::InputFloat("width",      &entity->model.w);
+		ImGui::InputFloat("height",     &entity->model.h);
 		ImGui::Checkbox("collision",    &entity->collision);
 		ImGui::Checkbox("controlled",   &entity->control);
 

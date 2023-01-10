@@ -12,8 +12,6 @@ struct entity_base
 	box_collider hitbox; //< collision hitbox
 	const char* name;    //< entity name
 	uint32_t id;         //< entity id
-	uint32_t x;          //< entity x coords
-	uint32_t y;          //< entity y coords
 	bool control;        //< is the entity being controlled by input?
 	bool collision;      //< is collision calculated?
 	
