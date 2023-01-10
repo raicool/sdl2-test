@@ -1,0 +1,23 @@
+[submodule "dear imgui.."]
+	path = deps/imgui
+	url  = https://github.com/ocornut/imgui.git
+
+[submodule "imgui_club"]
+	path = deps/imgui_club
+	url  = https://github.com/ocornut/imgui_club.git
+
+[submodule "imgui-docking"]
+	path = deps/imgui-docking
+	url  = https://github.com/ocornut/imgui.git
+
+[submodule "SDL2"]
+	path = deps/SDL
+	url  = https://github.com/libsdl-org/SDL.git
+
+[submodule "SDL_image"]
+	path = deps/SDL_image
+	url  = https://github.com/libsdl-org/SDL_image.git
+
+[submodule "spdlog"]
+	path = deps/spdlog
+	url  = https://github.com/gabime/spdlog.git
