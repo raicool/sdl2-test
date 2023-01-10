@@ -29,8 +29,9 @@ void init()
 	texture::add_texture("res/tex/color.png", "colorful");
 	texture::add_texture("res/tex/tex.png", "grid");
 
-	game_scene.scene_texture_pallete[0] = texture::get_texture("colorful");
-	game_scene.scene_texture_pallete[1] = texture::get_texture("grid");
+	game_scene.scene_texture_pallete[0] = texture::get_texture("grid");
+	game_scene.scene_texture_pallete[1] = texture::get_texture("colorful");
+	
 	
 	game_scene.add_player("player1", 1326 / 2, 720 / 1.25, "red", true);
 	game_scene.add_player("player2", 1326 / 2, 720 / 4, "blue");
