@@ -31,7 +31,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     "deps/imgui-docking"
     "deps/glm"
     "deps/sdl/include"
-    "deps/sdl_image"
+    "deps/sdl_image/include"
     "deps/entt/src"
     "deps/spdlog/include"
 )

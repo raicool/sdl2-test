@@ -10,15 +10,20 @@
 [submodule "deps/imgui-docking"]
 	path = deps/imgui-docking
 	url = https://github.com/ocornut/imgui.git
+	branch = docking
 [submodule "deps/SDL"]
 	path = deps/SDL
 	url = https://github.com/libsdl-org/SDL.git
+	branch = SDL2
 [submodule "deps/SDL_image"]
 	path = deps/SDL_image
 	url = https://github.com/libsdl-org/SDL_image.git
+	branch = SDL2
 [submodule "spdlog"]
 	path = spdlog
 	url = https://github.com/gabime/spdlog.git
 [submodule "deps/spdlog"]
 	path = deps/spdlog
 	url = https://github.com/gabime/spdlog.git
+[submodule "imgui-docking"]
+	branch = docking
