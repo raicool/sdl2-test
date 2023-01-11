@@ -15,7 +15,7 @@ void init()
 {
 	log::init();
 
-	sdlwindow.init("SDL", 1326, 720);
+	sdlwindow.init("SDL", 1280, 720);
 	sdlwindow.add_panel<hierarchy>(&game_scene);
 	sdlwindow.add_panel<info>(&game_scene);
 	//sdlwindow.add_panel<memory>(&game_scene);
@@ -32,9 +32,9 @@ void init()
 	game_scene.scene_texture_pallete[0] = texture::get_texture("grid");
 	game_scene.scene_texture_pallete[1] = texture::get_texture("colorful");
 	
-	
-	game_scene.add_player("player1", 1326 / 2, 720 / 1.25, "red", true);
-	game_scene.add_player("player2", 1326 / 2, 720 / 4, "blue");
+//	game_scene.add_ball(1280 / 2, 720 / 2);
+	game_scene.add_player("player1", 1280 / 2, 720 / 1.25, "red", true);
+	game_scene.add_player("player2", 1280 / 2, 720 / 4, "blue");
 
 	deserialize_field_binary("res/scene/scene.bin", game_scene);
 

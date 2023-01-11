@@ -120,6 +120,8 @@ static void bin_read(T* dst, std::ifstream& src, uint32_t* offset, size_t size =
 *	@param header - header to look for
 *	@param src    - file's input stream
 *	@param size   - size of the magic number in bytes
+* 
+*   @return 1 if doesn't match, 0 otherwise
 */
 static bool verify_magic(const char* header, std::ifstream& src, uint8_t size)
 {

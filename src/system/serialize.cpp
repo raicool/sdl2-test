@@ -20,8 +20,7 @@ void serialize_field_binary(const char* dir, scene& _scene)
 
 	// header
 	bin_write<const char>("RPG", file, sizeof(char) * 3);
-	bin_write<uint32_t>(&_scene.field->width, file);
-	bin_write<uint32_t>(&_scene.field->height, file);
+	bin_write<uint32_t>(&_scene.field->tile_count, file);
 
 	// tile data
 	for (tile& it_tile : _scene.field->tile_map)
@@ -54,20 +53,18 @@ void deserialize_field_binary(const char* dir, scene& _scene)
 		return;
 	}
 
-	bin_read<uint32_t>(&_scene.field->width, file, &offset);
-	bin_read<uint32_t>(&_scene.field->height, file, &offset);
+	bin_read<uint32_t>(&_scene.field->tile_count, file, &offset);
 
 	// file sanity check
-	if (verify_magic("RPG", file, 3) || _scene.field->width > 25565 || _scene.field->height > 25565)
+	if (verify_magic("RPG", file, 3) || _scene.field->tile_count > 25565)
 	{
 		LOG_WARN("load warning : potentially corrupt scene file, loading anyways");
-		LOG_WARN("field width  = {}", _scene.field->width);
-		LOG_WARN("field height = {}", _scene.field->height);
+		LOG_WARN("tile count  = {}", _scene.field->tile_count);
 	}
 
-	_scene.field->tile_map.reserve(_scene.field->width * _scene.field->height);
+	_scene.field->tile_map.reserve(_scene.field->tile_count);
 
-	for (int i = 0; i <= _scene.field->width * _scene.field->height; i++)
+	for (int i = 0; i <= _scene.field->tile_count; i++)
 	{
 		bin_read<float>(&tile_buffer.x, file, &offset);
 		bin_read<float>(&tile_buffer.y, file, &offset);

@@ -14,7 +14,7 @@ enum collision_type
 struct box_collider
 {
 	void* touch[8]{ nullptr }; //< how many entities are currently touching the collider (nullptr = end of check)
-	void* owner;                      //< what the collider belongs to
+	void* owner;               //< what the collider belongs to
 	float x;
 	float y;
 	float w;

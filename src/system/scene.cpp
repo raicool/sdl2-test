@@ -54,7 +54,7 @@ void scene::update(window& sdlwindow)
 	// field
 	if (display_field)
 	{
-		for (int i = 0; i < field->height * field->width; i++)
+		for (int i = 0; i < field->tile_count; i++)
 		{
 			SDL_RenderCopyF(sdlwindow.sdlrenderer, scene_texture_pallete[field->tile_map[i].texture_index], NULL, field->tile_map[i].sdlrect());
 		}

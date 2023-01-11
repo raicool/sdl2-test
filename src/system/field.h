@@ -21,6 +21,5 @@ struct tile
 struct field
 {
 	std::vector<tile> tile_map; //< contains model, texture index, and collision type for each tile in the field
-	uint32_t width = 0;         //< width of the map in # of tiles (should not go above 25565)
-	uint32_t height = 0;        //< height of the map in # of tiles (should not go above 25565)
+	uint32_t tile_count = 0;         //< width of the map in # of tiles (should not go above 25565)
 }; 

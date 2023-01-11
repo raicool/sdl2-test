@@ -10,6 +10,7 @@ void window::init(const char* window_title, uint16_t win_width, uint16_t win_hei
 
 	sdlwindow = SDL_CreateWindow(window_title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, win_width, win_height, SDL_WINDOW_RESIZABLE);
 	sdlrenderer = SDL_CreateRenderer(sdlwindow, -1, SDL_RENDERER_ACCELERATED);
+	SDL_RenderSetLogicalSize(sdlrenderer, width, height);
 
 	if (!sdlwindow) { LOG_ERROR("SDL Window could not be created {}", SDL_GetError()); }
 	else { LOG_INFO("SDL Window initialized"); }
