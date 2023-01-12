@@ -27,3 +27,9 @@
 	url = https://github.com/gabime/spdlog.git
 [submodule "imgui-docking"]
 	branch = docking
+[submodule "yaml-cpp"]
+	path = yaml-cpp
+	url = https://github.com/jbeder/yaml-cpp.git
+[submodule "deps/yaml-cpp"]
+	path = deps/yaml-cpp
+	url = https://github.com/jbeder/yaml-cpp.git
